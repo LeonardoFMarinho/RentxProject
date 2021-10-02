@@ -1,15 +1,11 @@
-import { Request, Response } from 'express'
-import { listCategoryUseCase } from './listCaregoriesUseCase'
+import { Request, Response } from 'express';
+import { ListCategoryUseCase } from './listCaregoriesUseCase';
 
-
-class listCategoriesContoller {
-    constructor(private listCategoriesUseCase: listCategoryUseCase) {
-
-    }
-    handle(request: Request, response: Response): Response {
-        const all = this.listCategoriesUseCase.execute()
-        return response.json(all)
-    }
-
+class ListCategoriesContoller {
+  constructor(private listCategoriesUseCase: ListCategoryUseCase) {}
+  handle(request: Request, response: Response): Response {
+    const all = this.listCategoriesUseCase.execute();
+    return response.json(all);
+  }
 }
-export { listCategoriesContoller }
+export { ListCategoriesContoller };
