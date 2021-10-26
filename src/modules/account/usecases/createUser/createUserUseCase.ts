@@ -1,6 +1,5 @@
 import { hash } from 'bcrypt';
 import { inject, injectable } from 'tsyringe';
-import { usersRoutes } from '../../../../Routes/users.routes';
 
 import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
 import { IUsersRepository } from '../../repositories/IUsersRepository';
