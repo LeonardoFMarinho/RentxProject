@@ -2,7 +2,7 @@ import { compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
 import { stringify } from 'uuid';
-import { AppError } from '@errors/appErrors';
+import { AppError } from '@shared/errors/appErrors';
 
 import { IUsersRepository } from '@modules/account/repositories/IUsersRepository';
 

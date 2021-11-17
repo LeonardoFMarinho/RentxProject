@@ -1,10 +1,11 @@
 import { getRepository, Repository } from 'typeorm';
-import { Category } from '../../entities/category';
+
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from '../ICategoriesRepository';
+} from '@modules/cars/repositories/ICategoriesRepository';
 
+import { Category } from '../entities/category';
 // singleton - padrão de projeto - criar apenas uma instancia de uma classe que será global
 
 class CategoriesRepository implements ICategoriesRepository {
