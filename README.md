@@ -7,7 +7,7 @@
 # Cadastro de carro
 *RF*
 [] Deve ser possivel cadastrar um novo carro
-[] Deve ser possivel listar todas as categorias 
+
 
 *RN*
 [] Não deve ser possivel cadastrar o carro com placa já existente
