@@ -6,14 +6,14 @@
 
 # Cadastro de carro
 *RF*
-[] Deve ser possivel cadastrar um novo carro
+[x] Deve ser possivel cadastrar um novo carro
 
 
 *RN*
-[] Não deve ser possivel cadastrar o carro com placa já existente
+[x] Não deve ser possivel cadastrar o carro com placa já existente
 [] Não deve ser possivel alterar a placa de um carro
-[] O carro deve ser cadastrado, por padrão, com disponibilidade
-[] Não deve ser possivel cadastro de carros por usuarios não administradores
+[x] O carro deve ser cadastrado, por padrão, com disponibilidade
+* [] Não deve ser possivel cadastro de carros por usuarios não administradores
 
 
 # Listagem de carros
