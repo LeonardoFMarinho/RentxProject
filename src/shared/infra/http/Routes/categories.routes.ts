@@ -4,6 +4,8 @@ import multer from 'multer';
 import { CreateCategoryController } from '@modules/cars/useCases/CreateCategory/CreateCategoryController';
 import { ImportCategoryController } from '@modules/cars/useCases/ImportCategory/ImportCategoryController';
 import { ListCategoriesContoller } from '@modules/cars/useCases/listCategory/listCategoriesController';
+import { ensureAuthenticate } from '../../../../../registerCarsModel/src/shared/infra/http/middlewares/ensureAuthenticate';
+import { ensureAdmin } from '../middlewares/ensureAdmin';
 
 const categoriesRoutes = Router();
 const upload = multer({
@@ -15,13 +17,20 @@ const createCategoryController = new CreateCategoryController();
 const importCategoryController = new ImportCategoryController();
 const listCategoriesContoller = new ListCategoriesContoller();
 
-categoriesRoutes.post('/', createCategoryController.handle);
+categoriesRoutes.post(
+  '/',
+  ensureAuthenticate,
+  ensureAdmin,
+  createCategoryController.handle,
+);
 
 categoriesRoutes.get('/', listCategoriesContoller.handle);
 
 categoriesRoutes.post(
   '/import',
   upload.single('file' /* nome do parametro no insomnia */),
+  ensureAuthenticate,
+  ensureAdmin,
   importCategoryController.handle,
 );
 
