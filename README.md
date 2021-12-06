@@ -13,21 +13,21 @@
 [x] Não deve ser possivel cadastrar o carro com placa já existente
 [] Não deve ser possivel alterar a placa de um carro
 [x] O carro deve ser cadastrado, por padrão, com disponibilidade
-* [] Não deve ser possivel cadastro de carros por usuarios não administradores
+[x] Não deve ser possivel cadastro de carros por usuarios não administradores
 
 
 # Listagem de carros
 *RF*
-[] Deve ser possivel listar os carros disponíveis  
-[] Deve ser possivel listar todos os carros disponiveis pelo nome da categoria
-[] Deve ser possivel listar todos os carros disponiveis pelo nome da marca
-[] Deve ser possivel listar todos os carros disponiveis pelo nome do carro
+[x] Deve ser possivel listar os carros disponíveis  
+[x] Deve ser possivel listar todos os carros disponiveis pelo nome da categoria
+[x] Deve ser possivel listar todos os carros disponiveis pelo nome da marca
+[x] Deve ser possivel listar todos os carros disponiveis pelo nome do carro
 
 *RNF*
 
 *RN*
 
-[] O usuário não precisa  estar logado no sistema
+[x] O usuário não precisa  estar logado no sistema
 
 
 # Cadastro de especificação no carro
