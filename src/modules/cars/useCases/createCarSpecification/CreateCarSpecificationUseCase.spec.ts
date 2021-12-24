@@ -1,15 +1,20 @@
 import { CarsRepositoryInMemory } from '@modules/cars/repositories/in-memory/CarsRepositoryInMemory';
+import { SpecificationsRepositoryInMemory } from '@modules/cars/repositories/in-memory/SpecificationInMemory';
 import { AppError } from '@shared/errors/appErrors';
 
 import { CreateCarSpecificationUseCase } from './createCarSpecification';
 
 let createCarSpecificationUseCase: CreateCarSpecificationUseCase;
 let carsRepositoryInMemory: CarsRepositoryInMemory;
+let specificationsRepositoryInMemory: SpecificationsRepositoryInMemory;
+
 describe('Create Car Specification', () => {
   beforeEach(() => {
     carsRepositoryInMemory = new CarsRepositoryInMemory();
+    specificationsRepositoryInMemory = new SpecificationsRepositoryInMemory();
     createCarSpecificationUseCase = new CreateCarSpecificationUseCase(
       carsRepositoryInMemory,
+      specificationsRepositoryInMemory,
     );
   });
 
