@@ -3,8 +3,8 @@ import { Router } from 'express';
 import { CreateCarController } from '@modules/cars/useCases/createCar/CreateCarController';
 import { ListAvailableCarsController } from '@modules/cars/useCases/ListAvailableCars/listAvailableCarsController';
 
-import { ensureAuthenticate } from '../../../../../registerCarsModel/src/shared/infra/http/middlewares/ensureAuthenticate';
 import { ensureAdmin } from '../middlewares/ensureAdmin';
+import { ensureAuthenticate } from '../middlewares/ensureAuthenticate';
 
 const carsRoutes = Router();
 
