@@ -1,4 +1,6 @@
+/* eslint-disable import/no-unresolved */
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
+
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepositoy,
@@ -6,13 +8,18 @@ import {
 
 class SpecificationsRepositoryInMemory implements ISpecificationsRepositoy {
   specifications: Specification[] = [];
-  async create({ description, name }: ICreateSpecificationDTO): Promise<void> {
+  async create({
+    description,
+    name,
+  }: ICreateSpecificationDTO): Promise<Specification> {
     const specification = new Specification();
     Object.assign(specification, {
       description,
       name,
     });
-    this.specifications.push();
+    this.specifications.push(specification);
+
+    return specification;
   }
   async findByName(name: string): Promise<Specification> {
     return this.specifications.find(

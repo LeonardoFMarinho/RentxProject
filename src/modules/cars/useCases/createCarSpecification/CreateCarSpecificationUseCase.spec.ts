@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { CarsRepositoryInMemory } from '@modules/cars/repositories/in-memory/CarsRepositoryInMemory';
 import { SpecificationsRepositoryInMemory } from '@modules/cars/repositories/in-memory/SpecificationInMemory';
 import { AppError } from '@shared/errors/appErrors';
@@ -38,10 +39,17 @@ describe('Create Car Specification', () => {
       brand: 'brand',
       category_id: 'category',
     });
-    const specifications_id = ['54321'];
-    await createCarSpecificationUseCase.execute({
+
+    const specification = await specificationsRepositoryInMemory.create({
+      description: 'test',
+      name: 'test name',
+    });
+    const specifications_id = [specification.id];
+    const specificationsCars = await createCarSpecificationUseCase.execute({
       car_id: car.id,
       specifications_id,
     });
+    expect(specificationsCars).toHaveProperty('specifications');
+    expect(specificationsCars.specifications.length).toBe(1);
   });
 });
