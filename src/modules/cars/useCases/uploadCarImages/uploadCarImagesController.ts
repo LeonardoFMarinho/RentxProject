@@ -1,4 +1,4 @@
-import { Request, response, Response } from 'express';
+import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
 import { UploadCarImagesUseCase } from './uploadCarImagesUseCase';
@@ -8,7 +8,7 @@ interface IFiles {
 }
 
 class UploadCarImagesController {
-  async handle(request: Request, respose: Response): Promise<Response> {
+  async handle(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
     const images = request.files as IFiles[];
     const uploadCarImagesUseCase = container.resolve(UploadCarImagesUseCase);
