@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { NextFunction, Request } from 'express';
 
 import { UsersRepository } from '@modules/account/infra/typeorm/repositories/UsersRepository';
