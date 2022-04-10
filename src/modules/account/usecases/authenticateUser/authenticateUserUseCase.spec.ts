@@ -1,6 +1,7 @@
-import { AppError } from '@shared/errors/appErrors';
+/* eslint-disable import/no-unresolved */
 import { ICreateUserDTO } from '@modules/account/dtos/ICreateUserDTO';
 import { UserRepositoryInMemory } from '@modules/account/repositories/in-memory/UsersRepositoryInMemory';
+import { AppError } from '@shared/errors/appErrors';
 
 import { CreateUserUseCase } from '../createUser/createUserUseCase';
 import { AuthenticateUserUseCase } from './authenticateUserUsecase';

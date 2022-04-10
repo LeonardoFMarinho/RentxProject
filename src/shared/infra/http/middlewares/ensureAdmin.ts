@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { NextFunction, Request } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 import { UsersRepository } from '@modules/account/infra/typeorm/repositories/UsersRepository';
 import { AppError } from '@shared/errors/appErrors';
