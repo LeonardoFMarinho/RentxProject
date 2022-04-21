@@ -2,6 +2,7 @@
 import dayjs from 'dayjs';
 
 import { CarsRepositoryInMemory } from '@modules/cars/repositories/in-memory/CarsRepositoryInMemory';
+import { CategoriesRepositoryInMemory } from '@modules/cars/repositories/in-memory/CategoriesRepositoryInMemory';
 import { RentalsRepositoryInMemory } from '@modules/rentals/repositories/inMemory/RentalsRepositoryInMemory';
 import { DayjsDateProvider } from '@shared/container/providers/DateProvaider/implementations/DayjsDateProvider';
 import { AppError } from '@shared/errors/appErrors';
@@ -28,9 +29,18 @@ describe('Create a new Rental', () => {
   });
 
   it('should be able to create a new rental', async () => {
+    const car = await carsRepositoryInMemory.create({
+      name: 'test',
+      description: 'testtt',
+      daily_rate: 100,
+      license_plate: 'testttt',
+      fine_amount: 40,
+      category_id: '1234',
+      brand: 'brand',
+    });
     const rental = await createRentalUseCase.execute({
       user_id: '12345',
-      car_id: '121212',
+      car_id: car.id,
       expected_return_date: dayAdd24Hours,
     });
     expect(rental).toHaveProperty('id');

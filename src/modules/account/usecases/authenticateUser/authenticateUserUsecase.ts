@@ -2,9 +2,9 @@ import { compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import { inject, injectable } from 'tsyringe';
 import { stringify } from 'uuid';
-import { AppError } from '@shared/errors/appErrors';
 
-import { IUsersRepository } from '@modules/account/repositories/IUsersRepository';
+import { AppError } from '../../../../shared/errors/appErrors';
+import { IUsersRepository } from '../../repositories/IUsersRepository';
 
 interface IRequest {
   email: string;
@@ -36,7 +36,7 @@ class AuthenticateUserUseCase {
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new AppError('email or password incorrect ');
+      throw new AppError('email or password incorrect!');
     }
     //  gerarJsonWebToken
     const token = sign({}, '2517d3cce5fd3aa5b7b35447244ffa18', {
